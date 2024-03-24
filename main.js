@@ -14,12 +14,16 @@ const btnEl = document.getElementById("btn-el");
 const ulEl = document.getElementById("ul-el");
 
 btnEl.addEventListener("click", function () {
-  let input = inputEl.value;
-  push(shoppingListInDB, input);
-  console.log(input);
+  if (inputEl.value === "") {
+    console.log("empty");
+  } else {
+    let input = inputEl.value;
+    push(shoppingListInDB, input);
+    console.log(input);
 
-  renderInput(input);
-  clearinputEl();
+    renderInput(input);
+    clearinputEl();
+  }
 });
 
 function renderInput(itemInputEl) {
