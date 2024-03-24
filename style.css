@@ -6,4 +6,70 @@ body {
   margin: 0;
   font-size: 1rem;
   color: #404040;
+  --btnInput-size: 80%;
+  --radius-size: 8px;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  background-color: #eff3f6;
+  width: 320px;
+  height: 450px;
+  border: 6px solid #2b283a;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* oraz dodany padding do gory aby rozciągało się do dołu */
+  padding: 3em 0;
+  align-items: center;
+}
+.cat-img {
+  width: 200px;
+}
+/* input, btn */
+#input-el {
+  margin: 1em 0;
+  padding: 1rem;
+  border: 0;
+  border-radius: var(--radius-size);
+  background-color: #e0e5ee;
+  width: var(--btnInput-size);
+  text-align: center;
+  font-size: 1rem;
+  color: #404040;
+  font-family: inherit;
+}
+::placeholder {
+  color: #a19f9f;
+}
+#input-el:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+#btn-el {
+  padding: 10px;
+  border: 6px solid transparent;
+  border-radius: var(--radius-size);
+  background-color: #b15164;
+  color: white;
+  font-size: 1rem;
+  width: var(--btnInput-size);
+  font-family: inherit;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+#btn-el:hover {
+  border: 6px solid #2b283a;
 }
