@@ -25,17 +25,37 @@ img {
 .card {
   background-color: #eff3f6;
   width: 320px;
-  height: 450px;
+  height: fit-content;
   border: 6px solid #2b283a;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* oraz dodany padding do gory aby rozciągało się do dołu */
-  padding: 3em 0;
+  padding: 2em 0 1em 0;
   align-items: center;
 }
 .cat-img {
   width: 200px;
+}
+/* unordered list */
+.items-box {
+  width: var(--btnInput-size);
+}
+ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 0.6em;
+  flex-wrap: wrap;
+}
+li {
+  background-color: #e0e5ee;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.6em;
+  border-radius: var(--radius-size);
+  overflow: hidden;
 }
 /* input, btn */
 #input-el {
@@ -69,6 +89,7 @@ img {
   font-family: inherit;
   cursor: pointer;
   transition: border 0.2s;
+  margin-bottom: 1rem;
 }
 #btn-el:hover {
   border: 6px solid #2b283a;
