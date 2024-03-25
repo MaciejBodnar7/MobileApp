@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-size: 1rem;
   color: #404040;
-  --btnInput-size: 80%;
+  --btnInput-size: 90%;
   --radius-size: 8px;
 }
 img {
@@ -50,12 +50,14 @@ ul {
   flex-wrap: wrap;
 }
 li {
-  background-color: #e0e5ee;
-  width: fit-content;
+  background-color: #fefdf8;
+  flex-grow: 1;
+  text-align: center;
   height: fit-content;
   padding: 0.6em;
   border-radius: var(--radius-size);
   overflow: hidden;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
 }
 /* input, btn */
 #input-el {
