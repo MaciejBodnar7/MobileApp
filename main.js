@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
   databaseURL: "https://mobileapp-shoppingbasket-default-rtdb.europe-west1.firebasedatabase.app/",
@@ -12,6 +12,17 @@ const shoppingListInDB = ref(database, "shoppingList");
 const inputEl = document.getElementById("input-el");
 const btnEl = document.getElementById("btn-el");
 const ulEl = document.getElementById("ul-el");
+
+//reading from firebase
+onValue(shoppingListInDB, function (snapshot) {
+  let listArray = Object.values(snapshot.val()); //get list from firebase and covert to arrray and store in variable
+  console.log(listArray);
+
+  //for loop for listArray
+  for (let i = 0; i < listArray.length; i++) {
+    console.log(listArray[i]);
+  }
+});
 
 btnEl.addEventListener("click", function () {
   if (inputEl.value === "") {
@@ -28,6 +39,10 @@ btnEl.addEventListener("click", function () {
 
 function renderInput(itemInputEl) {
   ulEl.innerHTML += `<li>${itemInputEl}</li>`;
+}
+
+function clearRenderedInput() {
+  ulEl.innerHTML = "";
 }
 
 function clearinputEl() {
