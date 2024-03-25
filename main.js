@@ -17,10 +17,14 @@ const ulEl = document.getElementById("ul-el");
 onValue(shoppingListInDB, function (snapshot) {
   let listArray = Object.values(snapshot.val()); //get list from firebase and covert to arrray and store in variable
   console.log(listArray);
-
+  clearRenderedInput();
+  let renderQ = "";
   //for loop for listArray
   for (let i = 0; i < listArray.length; i++) {
     console.log(listArray[i]);
+    renderQ = listArray[i];
+
+    renderInput(renderQ); //render all items from array
   }
 });
 
@@ -30,9 +34,9 @@ btnEl.addEventListener("click", function () {
   } else {
     let input = inputEl.value;
     push(shoppingListInDB, input);
-    console.log(input);
+    // console.log(input); //we dont want to logout 2x times, we do this in for loop in onValue
 
-    renderInput(input);
+    // renderInput(input); //we dont need this becouse we rendering from database
     clearinputEl();
   }
 });
