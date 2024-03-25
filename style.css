@@ -59,6 +59,13 @@ li {
   border-radius: var(--radius-size);
   overflow: hidden;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+li:hover,
+:focus {
+  background: #b15164;
+  color: white;
 }
 /* input, btn */
 #input-el {
@@ -94,6 +101,8 @@ li {
   transition: border 0.2s;
   margin-bottom: 1rem;
 }
-#btn-el:hover {
+#btn-el:hover,
+:focus {
   border: 6px solid #2b283a;
+  outline: 0;
 }
