@@ -8,6 +8,7 @@ body {
   color: #404040;
   --btnInput-size: 90%;
   --radius-size: 8px;
+  user-select: none;
 }
 img {
   max-width: 100%;
